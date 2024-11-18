@@ -1,13 +1,20 @@
-import MatchCard from "./Components/MatchCard";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"
+import Control from './pages/control/Control'
+import Overlay from "./pages/match_progress/Overlay"
 
-export default function App() {
-  const matchCards = Array.from({length: 5})
-  
+const App = () => {
   return (
-    <div className="flex space-x-4 px-2 h-screen">
-      {matchCards.map((_, index) =>(
-        <MatchCard key={index}></MatchCard>
-      ))}
-    </div>
+    <Router>
+        {/* <nav>
+          <Link to="control">Control Page</Link>
+          <Link to="overlay">Overlay Page</Link>
+        </nav> */}
+      <Routes>
+        <Route path='/overlay' element={<Overlay/>}/>
+        <Route path='/control' element={<Control/>}/>
+      </Routes>
+    </Router>
   )
 }
+
+export default App;
