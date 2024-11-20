@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom"
-import{useState} from "react"
+import {useState} from 'react'
 import Control from './pages/control/Control'
 import Overlay from "./pages/match_progress/Overlay"
 
@@ -21,14 +21,10 @@ function App(){
             <Link to= "/control" className="mr-4">Control Page</Link>
           </nav>
 
-          <Switch>
-            <Route path="/overlay">
-              <Overlay matchData={matchData}/>
-            </Route>
-            <Route path="/control">
-              <ControlPage matchData={matchData} setMatchData={setMatchData}/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/overlay" element={ <Overlay matchData={matchData}/>}/>
+            <Route path="/control" element={ <Control matchData={matchData} setMatchData={setMatchData}/>}/>
+          </Routes>
       </div>
     </Router>
   );

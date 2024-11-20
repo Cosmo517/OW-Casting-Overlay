@@ -22,7 +22,7 @@ export default function Control() {
     };
 
     return (
-        <div className="h-full flex space-x-4">
+        <div className="h-full flex space-x-4 text-black">
             <div className='flex-1 space-x-4 border-2 border-white max-w-fit p-8 rounded-md'>
 
                 <div className='text-white text-center pb-2 text-2xl'>
